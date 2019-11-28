@@ -1,16 +1,24 @@
 {
-  "name": "example",
+  "name": "@codeceptjs/examples",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "kaflan, davert",
   "license": "ISC",
   "dependencies": {
     "codeceptjs": "^2.3.0",
     "puppeteer": "^1.19.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecept-js/examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codecept-js/examples/issues"
+  },
+  "homepage": "https://github.com/codecept-js/examples#readme",
+  "description": ""
 }
