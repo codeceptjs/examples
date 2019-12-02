@@ -9,8 +9,9 @@
   "author": "kaflan, davert",
   "license": "ISC",
   "dependencies": {
-    "codeceptjs": "^2.3.0",
-    "puppeteer": "^1.19.0"
+    "codeceptjs": "^2.3.6",
+    "puppeteer": "^2.0.0",
+    "testcafe": "^1.7.0"
   },
   "repository": {
     "type": "git",
