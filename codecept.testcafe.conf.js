@@ -1,3 +1,7 @@
+const { setHeadlessWhen } = require('@codeceptjs/configure');
+
+setHeadlessWhen(process.env.HEADLESS);
+
 exports.config = {
   tests: './todomvc-tests/**/*_test.js',
   output: './output',
@@ -5,7 +9,7 @@ exports.config = {
     TestCafe: {
       url: 'http://localhost',      
       browser: 'chrome',
-      show: false,
+      show: true,
     },
 
     REST: {},
@@ -27,5 +31,5 @@ exports.config = {
   },
   bootstrap: null,
   mocha: {},
-  name: 'codepress demo tests'
+  name: 'codecept demo tests'
 }

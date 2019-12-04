@@ -1,3 +1,7 @@
+const { setHeadlessWhen } = require('@codeceptjs/configure');
+
+setHeadlessWhen(process.env.HEADLESS);
+
 exports.config = {
   tests: './todomvc-tests/**/*_test.js',
   output: './output',
@@ -14,17 +18,25 @@ exports.config = {
     }
   },
 
-  // gherkin: {
-  //   features: './todomvc-tests/features/*.feature',
-  //   steps: [
-  //     './todomvc-tests/step-definitions/create-todos.steps.js'
-  //   ]
-  // },
+  gherkin: {
+    features: './todomvc-tests/features/*.feature',
+    steps: [
+      './todomvc-tests/step-definitions/create-todos.steps.js'
+    ]
+  },
 
   include: {
     TodosPage: './todomvc-tests/pages/todos.page.js'
   },
+
+  plugins: {
+    wdio: {
+      enabled: true,
+      services: ['selenium-standalone']
+    }
+  },  
+
   bootstrap: null,
   mocha: {},
-  name: 'codepress demo tests'
+  name: 'codecept demo tests'
 }

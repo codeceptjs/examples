@@ -1,3 +1,7 @@
+const { setHeadlessWhen } = require('@codeceptjs/configure');
+
+setHeadlessWhen(process.env.HEADLESS);
+
 exports.config = {
   tests: './todomvc-tests/**/*_test.js',
   output: './output',
@@ -29,5 +33,5 @@ exports.config = {
   },
   bootstrap: null,
   mocha: {},
-  name: 'codepress demo tests'
+  name: 'codecept demo tests'
 }
