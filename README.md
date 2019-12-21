@@ -11,7 +11,7 @@ This is a playground for your first steps in testing, so instead of installing i
 2. Install ALL dependencies:
 
 ```
-npm i
+npm install
 ```
 
 This will install codeceptjs with puppeteer, webdriverio & testcafe packages. 
