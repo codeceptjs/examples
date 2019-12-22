@@ -9,5 +9,6 @@ jobs:
     - uses: testomatio/check-tests@master
       with:
         framework: codeceptjs
+        branch: check-tests
         tests: "./todomvc-tests/**_test.js"
         token: ${{ secrets.GITHUB_TOKEN }}
