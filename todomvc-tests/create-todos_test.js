@@ -19,7 +19,7 @@ Scenario('Create a new todo item', async (I, TodosPage) => {
   I.saveScreenshot('create-todo-item.png')
 });
 
-Scenario('Create multiple todo items', async (I, TodosPage) => {
+xScenario('Create multiple todo items', async (I, TodosPage) => {
   I.say('Given I have an empty todo list')
   I.say('When I create todos "foo", "bar" and "baz"')
   TodosPage.enterTodo('foo')
@@ -61,7 +61,7 @@ Scenario('Text input field should be cleared after each item', async (I, TodosPa
   TodosPage.seeEmptyTodoInput()
 })
 
-Scenario('Text input should be trimmed', async (I, TodosPage) => {
+xScenario('Text input should be trimmed', async (I, TodosPage) => {
   I.say('Given I have an empty todo list')
   I.say('When I enter a todo with whitespace around the text')
   TodosPage.enterTodo('       Todo with lots of whitespace around       ')
