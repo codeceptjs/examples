@@ -8,8 +8,8 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.event.pull_request.head.sha }}    
-        path: gh-head
+        ref: ${{ github.event.pull_request.base.sha }}    
+        path: gh-base
     - uses: testomatio/check-tests@master
       with:
         framework: codeceptjs
