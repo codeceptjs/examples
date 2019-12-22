@@ -6,11 +6,10 @@ jobs:
     name: Tests
     steps:
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 2    
     - uses: testomatio/check-tests@master
       with:
         framework: codeceptjs
         tests: "./todomvc-tests/**_test.js"
         branch: check-tests
         token: ${{ secrets.GITHUB_TOKEN }}
+        compare: ${{ github.event.pull_request.base.sha }}    
