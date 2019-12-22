@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Tests
+    steps:
+    - name: Check current tests
+      id: check
+      uses: testomatio/check-tests
+      with:
+        framework: codeceptjs
+        tests: todomvc-tests/**_test.js
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
