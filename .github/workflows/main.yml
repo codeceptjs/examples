@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Tests
     steps:
-    - name: Check current tests
-      id: check
-      uses: testomatio/check-tests@v0.2
+    - uses: actions/checkout@v2
+    - uses: testomatio/check-tests@master
       with:
         framework: codeceptjs
         tests: "./todomvc-tests/**_test.js"
