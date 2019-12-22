@@ -71,7 +71,7 @@ xScenario('Text input should be trimmed', async (I, TodosPage) => {
 })
 
 
-Scenario('New todos should be added to the bottom of the list', async (I, TodosPage) => {
+xScenario('New todos should be added to the bottom of the list', async (I, TodosPage) => {
   I.say('Given I added some todos')
   TodosPage.enterTodo('first')
   TodosPage.enterTodo('second')
