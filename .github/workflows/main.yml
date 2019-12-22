@@ -7,9 +7,8 @@ jobs:
     steps:
     - name: Check current tests
       id: check
-      uses: testomatio/check-tests
+      uses: testomatio/check-tests@v1
       with:
         framework: codeceptjs
         tests: todomvc-tests/**_test.js
         token: ${{ secrets.GITHUB_TOKEN }}
-        
