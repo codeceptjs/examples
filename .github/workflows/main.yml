@@ -6,10 +6,10 @@ jobs:
     name: Tests
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/checkout@v2
       with:
         ref: ${{ github.event.pull_request.head.sha }}    
         path: gh-head
+    - uses: actions/checkout@v2
     - uses: testomatio/check-tests@master
       with:
         framework: codeceptjs
