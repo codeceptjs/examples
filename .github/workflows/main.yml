@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Check current tests
       id: check
-      uses: testomatio/check-tests@v1
+      uses: testomatio/check-tests@v0.1
       with:
         framework: codeceptjs
         tests: todomvc-tests/**_test.js
