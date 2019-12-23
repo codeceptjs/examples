@@ -14,3 +14,4 @@ jobs:
         tests: "./todomvc-tests/**_test.js"
         token: ${{ secrets.GITHUB_TOKEN }}
         has-tests-label: true
+        
