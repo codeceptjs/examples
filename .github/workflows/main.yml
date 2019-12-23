@@ -1,9 +1,10 @@
 on: [push]
 
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Tests
+    name: Check Tests
     steps:
     - uses: actions/checkout@v2
       with:
@@ -14,4 +15,4 @@ jobs:
         tests: "./todomvc-tests/**_test.js"
         token: ${{ secrets.GITHUB_TOKEN }}
         has-tests-label: true
-        
+
