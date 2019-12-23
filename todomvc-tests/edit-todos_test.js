@@ -8,7 +8,7 @@ Before(async (I, TodosPage) => {
     TodosPage.enterTodo('baz')
 })
 
-Scenario('Edited todo is saved on blur', async (I, TodosPage) => {
+Scenario.only('Edited todo is saved on blur', async (I, TodosPage) => {
     I.say('Given I have some todos')
   
     I.say('When I edit the first todo')
