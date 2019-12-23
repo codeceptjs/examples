@@ -20,7 +20,7 @@ Scenario.only('Edited todo is saved on blur', async (I, TodosPage) => {
     I.saveScreenshot('edited-todo-saved-on-blur.png')
 })
 
-Scenario('Delete todos', async (I, TodosPage) => {
+Scenario.only('Delete todos', async (I, TodosPage) => {
     I.say('Given I have some todos')
     I.say('When I delete the first todo')
     TodosPage.deleteNthTodo(1)
