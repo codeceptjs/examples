@@ -72,7 +72,7 @@ module.exports = {
 
     deleteNthTodo(nthTodo) {
         // Use a custom helper function to hover over an todo item
-        I.hover(`.todo-list li:nth-child(${nthTodo})`)
+        I.moveCursorTo(`.todo-list li:nth-child(${nthTodo})`)
         I.click(nthTTodoDeleteButton(nthTodo))
     },
 
