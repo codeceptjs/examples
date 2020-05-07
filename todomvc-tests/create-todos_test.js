@@ -17,11 +17,10 @@ Scenario('Create a new todo item', async ({ I, TodosPage }) => {
   TodosPage.seeNumberOfTodos(1)
 
   I.saveScreenshot('create-todo-item.png')
-})
+});
 
 Scenario('Create multiple todo items', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
-
   I.say('When I create todos "foo", "bar" and "baz"')
   TodosPage.enterTodo('foo')
   TodosPage.enterTodo('bar')
