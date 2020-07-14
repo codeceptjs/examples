@@ -1,5 +1,5 @@
 This repo contains tests for TodoMVC application.
-Tests can be executed via different backends.
+Tests can be executed via different helpers.
 
 ![](todo.png)
 
