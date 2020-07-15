@@ -14,7 +14,7 @@ This is a playground for your first steps in testing, so instead of installing i
 npm i
 ```
 
-This will install codeceptjs with puppeteer, webdriverio & testcafe packages. 
+This will install CodeceptJS with Puppeteer, WebdriverIO & TestCafe packages. 
 
 # Running Tests
 
@@ -61,9 +61,9 @@ Run tests in parallel with 3 workers (headless mode):
 HEADLESS=true npx codeceptjs run-workers 3 -c codecept.webdriver.conf.js 
 ```
 
-## WebDriver
+## WebdriverIO
 
-Use `codecept.webdriver.conf.js` to run tests with WebDriver in Chrome:
+Use `codecept.webdriver.conf.js` to run tests with WebdriverIO in Chrome:
 
 ```
 npx codeceptjs run -c codecept.webdriver.conf.js --steps 
