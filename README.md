@@ -8,7 +8,7 @@ Tests can be executed via different helpers.
 This is a playground for your first steps in testing, so instead of installing it from NPM it is recommended to clone it from repo instead and then install the dependencies:
 
 ```
-git clone codeceptjs-examples && cd codeceptjs-examples && npm i
+git clone git@github.com:codecept-js/examples.git codeceptjs-examples && cd codeceptjs-examples && npm install
 ```
 
 This will install codeceptjs with puppeteer, webdriverio & testcafe packages. 
