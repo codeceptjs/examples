@@ -11,7 +11,7 @@ This is a playground for your first steps in testing, so instead of installing i
 git clone git@github.com:codecept-js/examples.git codeceptjs-examples && cd codeceptjs-examples && npm install
 ```
 
-This will install codeceptjs with puppeteer, webdriverio & testcafe packages. 
+This will install CodeceptJS with Puppeteer, WebdriverIO & TestCafe packages. 
 
 # Running Tests
 
@@ -34,9 +34,9 @@ npx codeceptjs run --steps -c codecept.puppeteer.conf.js
 ```
 
 
-## WebDriver
+## WebdriverIO
 
-Use `codecept.webdriver.conf.js` to run tests with WebDriver in Chrome:
+Use `codecept.webdriver.conf.js` to run tests with WebdriverIO in Chrome:
 
 ```
 npx codeceptjs run -c codecept.webdriver.conf.js --steps 
