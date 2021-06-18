@@ -50,7 +50,7 @@ Use `codecept.testcafe.conf.js` to run tests with TestCafe in Chrome:
 npx codeceptjs run -c codecept.testcafe.conf.js --steps 
 ```
 
-## Headless Mpde
+## Headless Mode
 
 Run tests in headless mode:
 
