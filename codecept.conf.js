@@ -8,7 +8,7 @@ exports.config = {
   helpers: {
     Playwright: {
       url: 'http://localhost',
-      waitForTimeout: 5000,
+      waitForTimeout: 5050,
       show: true,
     },
 
