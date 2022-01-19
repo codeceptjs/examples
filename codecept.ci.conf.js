@@ -3,11 +3,11 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 setHeadlessWhen(true);
 
 exports.config = {
-  tests: './todomvc-tests/**/*_test.js',
+  tests: './Temp.js',
   output: './output',
   helpers: {
     Playwright: {
-      url: 'http://localhost',
+      url: 'https://web.bachelorapp.net/participation',
       waitForTimeout: 5000,
       show: true,
     },
