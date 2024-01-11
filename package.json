@@ -20,9 +20,9 @@
   "description": "",
   "devDependencies": {
     "@codeceptjs/configure": "^0.5.0",
-    "@codeceptjs/ui": "^0.2.0",
+    "@codeceptjs/ui": "^0.7.0",
     "@wdio/selenium-standalone-service": "^5.16.10",
-    "codeceptjs": "3.0.0",
+    "codeceptjs": "3.5.11",
     "playwright": "1.4.1",
     "puppeteer": "^2.0.0",
     "testcafe": "^1.7.0",
