@@ -1,6 +1,6 @@
 {
   "name": "@codeceptjs/examples",
-  "version": "1.2.1",
+  "version": "3.5.12",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,7 +8,9 @@
   "keywords": [],
   "author": "kaflan, davert",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "ts-node": "10.9.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codecept-js/examples.git"
@@ -22,8 +24,8 @@
     "@codeceptjs/configure": "^0.5.0",
     "@codeceptjs/ui": "^0.2.0",
     "@wdio/selenium-standalone-service": "^5.16.10",
-    "codeceptjs": "3.0.0",
-    "playwright": "1.4.1",
+    "codeceptjs": "3.5.12",
+    "playwright": "1.41.2",
     "puppeteer": "^2.0.0",
     "testcafe": "^1.7.0",
     "webdriverio": "^5.16.11"

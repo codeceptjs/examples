@@ -7,29 +7,30 @@ const I = actor();
 // const nthTodoEditField = nth => `.todo-list li:nth-child(${nth}) > form > input` // ({ xpath: `(//*[contains(@class,"todo-list")]/li/form/input)[${nth}]`})
 // const nthTodoItem = nth => `.todo-list li:nth-child(${nth})` // ({ xpath: `(//*[contains(@class,"todo-list")]/li)[${nth}]`})
 
-const nthTodoCheckbox = nth => locate('div > input').inside(`.todo-list li:nth-child(${nth})`) 
-const nthTTodoDeleteButton = nth => locate('div > button').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth delete button`) 
-const nthTodoEditField = nth => locate('form > input').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth todo input`) 
+const nthTodoCheckbox = nth => locate('div > input').inside(`.todo-list li:nth-child(${nth})`)
+const nthTTodoDeleteButton = nth => locate('div > button').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth delete button`)
+const nthTodoEditField = nth => locate('form > input').inside(`.todo-list li:nth-child(${nth})`).as(`${nth}nth todo input`)
 const nthTodoItem = nth => locate('.todo-list li').at(nth).as(`${nth} todo item`)
 
 module.exports = {
     goto() {
-        I.amOnPage('http://todomvc.com/examples/angularjs/#/')
+        I.amOnPage('https://todomvc.com/examples/react/dist/')
         I.refreshPage()
         I.executeScript(() => sessionStorage.clear())
         I.executeScript(() => console.error('Boom!'))
-        I.waitForVisible('.new-todo')    
+        I.waitForVisible('.new-todo')
     },
 
     enterTodo(todo) {
         I.fillField('.new-todo', todo)
-        I.pressKey('Enter')        
+        I.pressKey('Enter')
+        I.wait(2);
     },
 
     enterTodos(todoItems) {
         I.executeScript((todoItems) => {
             localStorage.setItem('todos-angularjs', JSON.stringify(todoItems));
-        }, todoItems)    
+        }, todoItems)
     },
 
     async markNthAsCompleted(nthTodo) {
@@ -81,7 +82,7 @@ module.exports = {
     },
 
     async seeNthTodoEquals(nthTodo, todo) {
-        let todos = await I.grabTextFrom('.todo-list li')
+        let todos: any = await I.grabTextFrom('.todo-list li')
         if (typeof todos === 'string') {
             todos = [todos]
         }
@@ -93,7 +94,7 @@ module.exports = {
     seeNumberOfTodos(numberOfTodos) {
         I.seeNumberOfVisibleElements('.todo-list li', numberOfTodos)
     },
-    
+
     seeEmptyTodoInput() {
         I.seeInField('.new-todo', '')
     },
@@ -102,3 +103,63 @@ module.exports = {
         I.seeElement('footer.info')
     }
 }
+
+export function goto() {
+    throw new Error("Function not implemented.");
+}
+export function enterTodo(arg0: string) {
+    throw new Error("Function not implemented.");
+}
+
+export function seeNumberOfTodos(arg0: number) {
+    throw new Error("Function not implemented.");
+}
+
+export function seeNthTodoEquals(arg0: number, arg1: any) {
+    throw new Error("Function not implemented.");
+}
+
+export function seeEmptyTodoInput() {
+    throw new Error("Function not implemented.");
+}
+
+export function seeFooter() {
+    throw new Error("Function not implemented.");
+}
+
+export function editNthTodo(arg0: number, arg1: string) {
+    throw new Error("Function not implemented.");
+}
+
+export function deleteNthTodo(arg0: number) {
+    throw new Error("Function not implemented.");
+}
+
+export function clearCompleted() {
+    throw new Error("Function not implemented.");
+}
+
+export function filterCompleted() {
+    throw new Error("Function not implemented.");
+}
+
+export function markAllAsCompleted() {
+    throw new Error("Function not implemented.");
+}
+
+export function filterActive() {
+    throw new Error("Function not implemented.");
+}
+
+export function markNthAsCompleted(arg0: number) {
+    throw new Error("Function not implemented.");
+}
+
+export function refresh() {
+    throw new Error("Function not implemented.");
+}
+
+export function enterTodos(arg0: { title: string; completed: boolean; }[]) {
+    throw new Error("Function not implemented.");
+}
+

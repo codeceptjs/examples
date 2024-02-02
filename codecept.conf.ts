@@ -3,7 +3,7 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 setHeadlessWhen(process.env.HEADLESS);
 
 exports.config = {
-  tests: './todomvc-tests/**/*_test.js',
+  tests: './todomvc-tests/**/*_test.ts',
   output: './output',
   helpers: {
     Playwright: {
@@ -15,19 +15,19 @@ exports.config = {
     REST: {},
 
     CustomHelper: {
-      require: './todomvc-tests/helpers/custom.helper.js'
+      require: './todomvc-tests/helpers/custom.helper.ts'
     }
   },
 
   gherkin: {
     features: './todomvc-tests/features/*.feature',
     steps: [
-      './todomvc-tests/step-definitions/create-todos.steps.js'
+      './todomvc-tests/step-definitions/create-todos.steps.ts'
     ]
   },
 
   include: {
-    TodosPage: './todomvc-tests/pages/todos.page.js'
+    TodosPage: './todomvc-tests/pages/todos.page.ts'
   },
   bootstrap: null,
   mocha: {},

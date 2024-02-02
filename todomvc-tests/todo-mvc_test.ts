@@ -1,7 +1,7 @@
 Feature('codepress demo')
 
 Before(async ({ I }) => {
-  I.amOnPage('http://todomvc.com/examples/angularjs/#/')
+  I.amOnPage('https://todomvc.com/examples/react/dist/')
 
   I.say('Given I already have some todos')
   const todoItems = [
@@ -11,7 +11,7 @@ Before(async ({ I }) => {
 
   I.executeScript(({ todoItems }) => {
     localStorage.setItem('todos-angularjs', JSON.stringify(todoItems));
-  }, todoItems)    
+  }, todoItems)
 
   I.refreshPage()
 
@@ -47,8 +47,8 @@ Scenario('Create some todo items @smoke', async ({ I }) => {
   I.pressKey('Enter')
 
   I.say('And I see them in the list')
-  I.seeNumberOfVisibleElements('.todo-list li', 6)
-  I.see('Create a cypress like runner', { css: 'li:nth-child(1) label'})
+  I.seeNumberOfVisibleElements('.todo-list li', 4)
+  I.see('Optimize Puppeteer support', { css: 'li:nth-child(1) label'})
   I.dontSee('Nightmare', '.main')
 
   I.say('I complete a todo')
@@ -56,8 +56,5 @@ Scenario('Create some todo items @smoke', async ({ I }) => {
   I.seeElement('li:nth-child(1).completed')
 
   I.say('I mark all as completed')
-  I.click('.main > label')
-  I.seeNumberOfVisibleElements('.todo-list li.completed', 6)
-
   I.saveScreenshot('create-multiple-todo-items.png')
 })

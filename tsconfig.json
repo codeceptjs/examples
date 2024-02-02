@@ -1,5 +1,17 @@
 {
-  "compilerOption": {
-    "allowJs": true
-  }
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["es2018", "DOM"],
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "strictNullChecks": false,
+    "types": ["codeceptjs", "node"],
+    "declaration": true,
+    "skipLibCheck": true,
+    "moduleDetection": "force"
+  },
+  "exclude": ["node_modules"]
 }
