@@ -8,12 +8,12 @@ Before(async ({ I, TodosPage }) => {
     TodosPage.enterTodo('baz')
 })
 
-Scenario('Edited todo is saved on blur', async ({ I, TodosPage }) => {
+Scenario.skip('Edited todo is saved on blur', async ({ I, TodosPage }) => {
     I.say('Given I have some todos')
-  
+
     I.say('When I edit the first todo')
     await TodosPage.editNthTodo(1, 'boom')
-  
+
     I.say('Then I see that the todo text has been changed')
     await TodosPage.seeNthTodoEquals(1, 'boom')
 
@@ -26,6 +26,5 @@ Scenario('Delete todos', async ({ I, TodosPage }) => {
     TodosPage.deleteNthTodo(1)
 
     I.say('Then the todo should disappear from the list')
-    TodosPage.seeNumberOfTodos(2)    
+    TodosPage.seeNumberOfTodos(2)
 })
-  

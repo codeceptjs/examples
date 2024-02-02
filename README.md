@@ -19,7 +19,7 @@ The default helper is Playwright.
 
 ## Playwright
 
-Use `codecept.conf.js` to run tests with Playwright:
+Use `codecept.conf.ts` to run tests with Playwright:
 
 ```
 npx codeceptjs run --steps
@@ -27,27 +27,27 @@ npx codeceptjs run --steps
 
 ## Puppeteer
 
-Use `codecept.puppeteer.conf.js` to run tests with Puppeteer:
+Use `codecept.puppeteer.conf.ts` to run tests with Puppeteer:
 
 ```
-npx codeceptjs run --steps -c codecept.puppeteer.conf.js 
+npx codeceptjs run --steps -c codecept.puppeteer.conf.ts 
 ```
 
 
 ## WebdriverIO
 
-Use `codecept.webdriver.conf.js` to run tests with WebdriverIO in Chrome:
+Use `codecept.webdriver.conf.ts` to run tests with WebdriverIO in Chrome:
 
 ```
-npx codeceptjs run -c codecept.webdriver.conf.js --steps 
+npx codeceptjs run -c codecept.webdriver.conf.ts --steps 
 ```
 
 ## TestCafe
 
-Use `codecept.testcafe.conf.js` to run tests with TestCafe in Chrome:
+Use `codecept.testcafe.conf.ts` to run tests with TestCafe in Chrome:
 
 ```
-npx codeceptjs run -c codecept.testcafe.conf.js --steps 
+npx codeceptjs run -c codecept.testcafe.conf.ts --steps 
 ```
 
 ## Headless Mode
