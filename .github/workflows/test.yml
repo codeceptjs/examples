@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm i && npx playwright install chromium
       - name: Run tests
         run: |
           npm i && npx playwright install chromium

@@ -12,7 +12,7 @@ jobs:
     - uses: testomatio/check-tests@master
       with:
         framework: codeceptjs
-        tests: "./todomvc-tests/**_test.js"
+        tests: "./todomvc-tests/**_test.ts"
         token: ${{ secrets.GITHUB_TOKEN }}
         has-tests-label: true
 
