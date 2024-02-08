@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codecept-js/examples.git"
+    "url": "git+https://github.com/codeceptjs/examples.git"
   },
   "bugs": {
-    "url": "https://github.com/codecept-js/examples/issues"
+    "url": "https://github.com/codeceptjs/examples.git/issues"
   },
-  "homepage": "https://github.com/codecept-js/examples#readme",
+  "homepage": "https://github.com/codeceptjs/examples.git#readme",
   "description": "",
   "devDependencies": {
     "@codeceptjs/configure": "^0.5.0",
