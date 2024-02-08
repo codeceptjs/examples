@@ -8,7 +8,7 @@ Tests can be executed via different helpers.
 This is a playground for your first steps in testing, so instead of installing it from NPM it is recommended to clone it from repo instead and then install the dependencies:
 
 ```
-git clone git@github.com:codecept-js/examples.git codeceptjs-examples && cd codeceptjs-examples && npm install
+git clone git@github.com:codecept-js/examples.git codeceptjs-examples && cd codeceptjs-examples && npm i
 ```
 
 This will install CodeceptJS with Puppeteer, WebdriverIO & TestCafe packages. 
@@ -27,27 +27,27 @@ npx codeceptjs run --steps
 
 ## Puppeteer
 
-Use `codecept.puppeteer.conf.ts` to run tests with Puppeteer:
+Use `codecept.puppeteer.conf.js` to run tests with Puppeteer:
 
 ```
-npx codeceptjs run --steps -c codecept.puppeteer.conf.ts 
+npx codeceptjs run --steps -c codecept.puppeteer.conf.js 
 ```
 
 
 ## WebdriverIO
 
-Use `codecept.webdriver.conf.ts` to run tests with WebdriverIO in Chrome:
+Use `codecept.webdriver.conf.js` to run tests with WebdriverIO in Chrome:
 
 ```
-npx codeceptjs run -c codecept.webdriver.conf.ts --steps 
+npx codeceptjs run -c codecept.webdriver.conf.js --steps 
 ```
 
 ## TestCafe
 
-Use `codecept.testcafe.conf.ts` to run tests with TestCafe in Chrome:
+Use `codecept.testcafe.conf.js` to run tests with TestCafe in Chrome:
 
 ```
-npx codeceptjs run -c codecept.testcafe.conf.ts --steps 
+npx codeceptjs run -c codecept.testcafe.conf.js --steps 
 ```
 
 ## Headless Mode
