@@ -1,6 +1,6 @@
 /// <reference types='codeceptjs' />
-type TodosPage = typeof import('./todomvc-tests/pages/todos.page');
-type CustomHelper = import('./todomvc-tests/helpers/custom.helper');
+type TodosPage = typeof import('./todomvc-tests/pages/todos.page.js');
+type CustomHelper = import('./todomvc-tests/helpers/custom.helper.js');
 
 declare namespace CodeceptJS {
   interface SupportObject { I: I, current: any, TodosPage: TodosPage }

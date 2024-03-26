@@ -14,19 +14,19 @@ exports.config = {
     REST: {},
 
     CustomHelper: {
-      require: './todomvc-tests/helpers/custom.helper.ts'
+      require: './todomvc-tests/helpers/custom.helper.js'
     }
   },
 
   gherkin: {
     features: './todomvc-tests/features/*.feature',
     steps: [
-      './todomvc-tests/step-definitions/create-todos.steps.ts'
+      './todomvc-tests/step-definitions/create-todos.steps.js'
     ]
   },
 
   include: {
-    TodosPage: './todomvc-tests/pages/todos.page.ts'
+    TodosPage: './todomvc-tests/pages/todos.page.js'
   },
 
   plugins: {

@@ -19,7 +19,7 @@ The default helper is Playwright.
 
 ## Playwright
 
-Use `codecept.conf.ts` to run tests with Playwright:
+Use `codecept.conf.js` to run tests with Playwright:
 
 ```
 npx codeceptjs run --steps

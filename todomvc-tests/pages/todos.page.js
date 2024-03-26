@@ -82,7 +82,7 @@ module.exports = {
     },
 
     async seeNthTodoEquals(nthTodo, todo) {
-        let todos: any = await I.grabTextFrom('.todo-list li')
+        let todos = await I.grabTextFrom('.todo-list li')
         if (typeof todos === 'string') {
             todos = [todos]
         }
@@ -104,62 +104,4 @@ module.exports = {
     }
 }
 
-export function goto() {
-    throw new Error("Function not implemented.");
-}
-export function enterTodo(arg0: string) {
-    throw new Error("Function not implemented.");
-}
-
-export function seeNumberOfTodos(arg0: number) {
-    throw new Error("Function not implemented.");
-}
-
-export function seeNthTodoEquals(arg0: number, arg1: any) {
-    throw new Error("Function not implemented.");
-}
-
-export function seeEmptyTodoInput() {
-    throw new Error("Function not implemented.");
-}
-
-export function seeFooter() {
-    throw new Error("Function not implemented.");
-}
-
-export function editNthTodo(arg0: number, arg1: string) {
-    throw new Error("Function not implemented.");
-}
-
-export function deleteNthTodo(arg0: number) {
-    throw new Error("Function not implemented.");
-}
-
-export function clearCompleted() {
-    throw new Error("Function not implemented.");
-}
-
-export function filterCompleted() {
-    throw new Error("Function not implemented.");
-}
-
-export function markAllAsCompleted() {
-    throw new Error("Function not implemented.");
-}
-
-export function filterActive() {
-    throw new Error("Function not implemented.");
-}
-
-export function markNthAsCompleted(arg0: number) {
-    throw new Error("Function not implemented.");
-}
-
-export function refresh() {
-    throw new Error("Function not implemented.");
-}
-
-export function enterTodos(arg0: { title: string; completed: boolean; }[]) {
-    throw new Error("Function not implemented.");
-}
 
