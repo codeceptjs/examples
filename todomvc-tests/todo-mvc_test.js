@@ -3,18 +3,6 @@ Feature('codepress demo')
 Before(async ({ I }) => {
   I.amOnPage('https://todomvc.com/examples/react/dist/')
 
-  I.say('Given I already have some todos')
-  const todoItems = [
-    {title: 'Create a cypress like runner for CodeceptJS', completed: false},
-    {title: 'Make it even better than cypress', completed: false},
-  ]
-
-  I.executeScript(({ todoItems }) => {
-    localStorage.setItem('todos-angularjs', JSON.stringify(todoItems));
-  }, todoItems)
-
-  I.refreshPage()
-
   I.executeScript(() => console.log('Some info'))
   I.executeScript(() => console.error('Some error'))
 
@@ -51,10 +39,15 @@ Scenario('Create some todo items @smoke', async ({ I }) => {
   I.see('Optimize Puppeteer support', { css: 'li:nth-child(1) label'})
   I.dontSee('Nightmare', '.main')
 
-  I.say('I complete a todo')
+  I.saveScreenshot('create-multiple-todo-items.png')
+})
+
+// @full-browser: toggling a React checkbox requires native input events,
+// which alternative no-render browsers don't dispatch
+Scenario('Complete a todo @full-browser', async ({ I }) => {
+  I.fillField({ css: '.new-todo'}, 'Complete me')
+  I.pressKey('Enter')
+
   I.click({ css: 'li:nth-child(1) .toggle'})
   I.seeElement('li:nth-child(1).completed')
-
-  I.say('I mark all as completed')
-  I.saveScreenshot('create-multiple-todo-items.png')
 })
