@@ -20,7 +20,8 @@ Scenario.skip('Edited todo is saved on blur', async ({ I, TodosPage }) => {
     I.saveScreenshot('edited-todo-saved-on-blur.png')
 })
 
-Scenario('Delete todos', async ({ I, TodosPage }) => {
+// @full-browser: the delete button is revealed on hover, which alternative browsers can't do
+Scenario('Delete todos @full-browser', async ({ I, TodosPage }) => {
     I.say('Given I have some todos')
     I.say('When I delete the first todo')
     TodosPage.deleteNthTodo(1)
