@@ -2,3 +2,4 @@
 
 - Create single todo
 - Create multiple todos
+- Delete a todo and keep the order of the rest
