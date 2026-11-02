@@ -1,0 +1,59 @@
+name: Testeiya QA review
+
+# Manual QA review of a pull request through Testeiya Cloud.
+# Run from the Actions tab: enter the PR number. Enable the pull_request
+# trigger below once auto-review on every PR is wanted.
+# Requires repo secrets: TESTEIYA_URL, TESTEIYA_ADMIN_SECRET.
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: "Pull request number to review"
+        required: true
+
+jobs:
+  review:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Run Testeiya review and comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TESTEIYA_URL: ${{ secrets.TESTEIYA_URL }}
+          TESTEIYA_ADMIN_SECRET: ${{ secrets.TESTEIYA_ADMIN_SECRET }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.inputs.pr }}
+        run: |
+          set -euo pipefail
+
+          PR_SHA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefOid --jq .headRefOid)
+          BASE_REF=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json baseRefName --jq .baseRefName)
+
+          RUN=$(curl -sf -X POST "$TESTEIYA_URL/runs" \
+            -H "Authorization: Bearer $TESTEIYA_ADMIN_SECRET" \
+            -H "content-type: application/json" \
+            -d "{\"repo\": \"$REPO\", \"commit\": \"$PR_SHA\", \"pipeline\": \"pr-review\",
+                 \"env\": {\"PULL_REF\": \"pull/$PR_NUMBER/head\", \"GITHUB_BASE_REF\": \"$BASE_REF\",
+                          \"GITHUB_REPOSITORY\": \"$REPO\", \"PR_NUMBER\": \"$PR_NUMBER\"}}" \
+            | jq -r .id)
+          echo "run started: $RUN"
+
+          STATUS=running
+          for i in $(seq 1 60); do
+            sleep 15
+            STATUS=$(curl -sf -H "Authorization: Bearer $TESTEIYA_ADMIN_SECRET" \
+              "$TESTEIYA_URL/runs/$RUN" | jq -r .status)
+            echo "[$((i * 15))s] $STATUS"
+            case "$STATUS" in passed|failed|skipped) break ;; esac
+          done
+
+          case "$STATUS" in passed|failed|skipped) ;; *) echo "Run did not finish in time"; exit 1 ;; esac
+
+          curl -sf -H "Authorization: Bearer $TESTEIYA_ADMIN_SECRET" \
+            "$TESTEIYA_URL/files/$RUN/report.md" -o report.md
+
+          { echo "<!-- testeiya-review -->"; cat report.md; } > comment.md
+          gh pr comment "$PR_NUMBER" --body-file comment.md
