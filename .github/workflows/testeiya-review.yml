@@ -56,4 +56,4 @@ jobs:
             "$TESTEIYA_URL/files/$RUN/report.md" -o report.md
 
           { echo "<!-- testeiya-review -->"; cat report.md; } > comment.md
-          gh pr comment "$PR_NUMBER" --body-file comment.md
+          gh pr comment "$PR_NUMBER" --repo "$REPO" --body-file comment.md
