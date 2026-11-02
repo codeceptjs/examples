@@ -46,7 +46,7 @@ module.exports = {
     },
 
     markAllAsCompleted() {
-        I.click('label[for="toggle-all"')
+        I.click('label[for="toggle-all"]')
     },
 
     clearCompleted() {
